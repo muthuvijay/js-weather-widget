@@ -1,0 +1,36 @@
+{
+  "name": "js-weather-widget",
+  "version": "1.0.0",
+  "description": "Weather widget that pulls realtime weather details for the user location",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muthuvijay/js-weather-widget.git"
+  },
+  "keywords": [
+    "Weather",
+    "API",
+    "widget"
+  ],
+  "author": "muthuvijay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muthuvijay/js-weather-widget/issues"
+  },
+  "homepage": "https://github.com/muthuvijay/js-weather-widget#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.1.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3"
+  }
+}

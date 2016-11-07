@@ -1,0 +1,56 @@
+<style>
+
+.widget-container{
+    width : 310px;
+    height: 160px;
+    border:1px solid #888;
+    border-radius: 10px;
+    box-shadow: 7px 7px 9px #444;
+    padding: 10px;
+    font: 100% arial;
+}
+
+.abs-center{
+    margin: auto;
+    position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+    
+}
+
+.widget-container h1,.widget-container ul,.widget-container figure{
+    margin: 0;
+    padding: 0;
+}
+.widget-container .current-temp{
+    padding: 10px 0;
+}
+.widget-container .current-temp span{display: inline-block;vertical-align: middle}
+
+.widget-container .current-temp span:first-child{
+    font-size: 3em;
+}
+
+.widget-container .temp-list li{
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    padding: 3px;
+}
+.widget-container .temp-list li:last-child{
+    border: 0;
+}
+
+.widget-container .temp-list li > span{
+    font-size: 0.7em;
+}
+.widget-container .temp-list li > span:first-child{
+    display: block;
+    font-size: 1em;
+    text-align: center
+}
+</style>
+
+<div id="js-weather-widget"></div>
+
+<script src="http://requirejs.org/docs/release/2.3.2/minified/require.js"></script>
+<script src="widget.min.js"></script>
