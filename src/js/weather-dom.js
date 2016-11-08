@@ -21,7 +21,12 @@ define(function(){
             },
 
             addText : function(text){
-                this.element.innerText = text;
+                //firefox is yet to support innerText
+                if (typeof this.element.textContent !== "undefined") {
+                    this.element.textContent = text;
+                } else {
+                    this.element.innerText = text;
+                }
                 return this;
             },
 

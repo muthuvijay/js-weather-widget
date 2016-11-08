@@ -38,7 +38,7 @@ var widget = (function(){
     //get weather info callback to parse & frame HTML
     function weatherInfoCB(data){
         if(data){
-            sectionContainer.addText(null);
+            sectionContainer.addText('');
             //create title node
             new DOM().create('h1').addText(data.title).appendDOM(sectionContainer.element);
             

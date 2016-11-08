@@ -29,6 +29,10 @@ define(function(){
     //Http get 
     function get(url,callback){
         var xhr = getHTTPRequest();
+            if(!xhr){
+                console.error('No Ajax Support');
+                return false;
+            }
             xhr.open('GET',url,true);
             
             xhr.onreadystatechange = function () {
