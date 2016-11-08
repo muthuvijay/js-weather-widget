@@ -1,3 +1,6 @@
+/**
+ * Services to call API via Ajax
+ */
 define(function(){
     function Services(){
     
@@ -23,17 +26,6 @@ define(function(){
         return null;
     }
 
-    function getHeaderConfig() {
-        
-        var config = {
-            dataType: 'json',
-            headers: {
-            }
-        }
-
-        return config;
-        }
-
     //Http get 
     function get(url,callback){
         var xhr = getHTTPRequest();
@@ -51,25 +43,19 @@ define(function(){
 
     
     //Http Post
-    function post(url,data){
-        
-    }
+    function post(url,data){}
     
     //Http put 
-    function put(url,data){
-
-    }
+    function put(url,data){}
+    
     //Http delete 
-
-    function _delete(url){
-
-    }
+    function _delete(url){}
     
     return {
         get : function(url,callback){ get(url,callback)},
-        put : function(url,data){ return put(url,data)},
-        post : function(url,data){return post(url,data)},
-        remove : function(url){ return _delete(url)},
+        put : function(url,data,callback){ return put(url,data,callback)},
+        post : function(url,data,callback){return post(url,data,callback)},
+        remove : function(url,callback){ return _delete(url,callback)},
     }
 }
 

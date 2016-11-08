@@ -1,3 +1,7 @@
+/**
+ * DOM API Wrapper with chaining
+ */
+
 define(function(){
 
     return function(){

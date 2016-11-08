@@ -1,8 +1,12 @@
+/**
+ * Widget APP to get user location via geolocation API and display Weather info for that location
+ */
+
 define(['api','dom'],function(weatherAPI,DOM){
 
 var widget = (function(){
 
-    var container = "js-weather-widget",
+    var container = "js-weather-widget", //Widget Container
         sectionContainer = null,
         defaultLatLong = {
             lat : 33.7490,
@@ -10,9 +14,10 @@ var widget = (function(){
         };
 
     function init(){
+        //Frame the Wrapper UI container
         sectionContainer =  new DOM().create('section').addClass('widget-container abs-center').addText('Loading...');
         sectionContainer.appendDOM(container);  
-        
+        //Get user location
         getLatLang();
     }
 
@@ -30,6 +35,7 @@ var widget = (function(){
         }
     }
 
+    //get weather info callback to parse & frame HTML
     function weatherInfoCB(data){
         if(data){
             sectionContainer.addText(null);
