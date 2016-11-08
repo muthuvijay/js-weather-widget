@@ -3,7 +3,7 @@ define(['http'],function(Services){
     function weatherAPI(){
         var self = this;
         self.api_key = "daaa97e688d62fff6164737e0c4d3f2a";
-        self.units = "metric";
+        self.units = "imperial";
         self.api_url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}";
         self.days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
