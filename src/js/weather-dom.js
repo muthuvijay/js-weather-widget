@@ -1,6 +1,6 @@
-define(function(document){
+define(function(){
 
-    function DOM(){
+    return function(){
 
         this.element = null;
 
@@ -17,19 +17,28 @@ define(function(document){
             },
 
             addText : function(text){
-                this.element.innerText(text);
+                this.element.innerText = text;
                 return this;
             },
 
-            appendDOM : function(container){
-                document.getElementById(container).appendChild(this.element);
+            addHTML : function(html){
+                this.element.innerHTML = html;
+                return this;
+            },
+
+            appendDOM : function(containerNode){
+                if(document.getElementById(containerNode)){
+                    document.getElementById(containerNode).appendChild(this.element);
+                }else{
+                    containerNode.appendChild(this.element);
+                }
+            },
+
+            getElemById : function(element){
+                return document.getElementById(element)
             }
 
         }
-
-
-
     }
 
-    return new DOM();
-}(document))
+});

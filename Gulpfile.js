@@ -7,18 +7,9 @@ var plugins = require("gulp-load-plugins")({
 });
 
 var appPath = 'src/';	
-var prodPath = 'dist/';
-var prodJS = 'dist/js';
 
 
-gulp.task('build', ['AppJS'], function() {
-  /*return gulp.src([appPath + 'index.html'])
-    .pipe(gulp.dest(prodPath))
-    .pipe(plugins.notify({ message: 'View build complete' }));*/
-});
-
-
-gulp.task('start', ['build','watch'],function() {
+gulp.task('start', ['AppJS','watch'],function() {
   //Configure your stock market backend via command line params and start your dev server
   plugins.connect.server({
       root:['src'],
@@ -26,24 +17,9 @@ gulp.task('start', ['build','watch'],function() {
     });
 });
 
-
-
-/*** BUILD APP CSS ***/
-
-gulp.task('AppCSS', function() {
-  return gulp.src([appPath+'styles/*.css'])
-    .pipe(plugins.rename({suffix: '.min'}))
-    // .pipe(plugins.cleanCSS())
-    .pipe(plugins.concat('app.min.css'))
-    .pipe(gulp.dest(prodCSS))
-    .pipe(plugins.notify({ message: 'AppCSS task complete' }));
-});
-
-
-
 /*** BUILD APP JS ***/
 
-var jsorder = [appPath+'weather-widget.js'] 
+var jsorder = [appPath+'widget.js'] 
 gulp.task('AppJS', function() {
   return gulp.src(jsorder)
     .pipe(plugins.concat('widget.js'))
@@ -55,15 +31,12 @@ gulp.task('AppJS', function() {
 
 //clean all dest folders before creating
 gulp.task('clean', function() {
-  return gulp.src([prodCSS, prodJS], {read: false})
+  return gulp.src([AppJS], {read: false})
     .pipe(plugins.clean());
 });
 
 
 gulp.task('watch', function() {
-
-  // Watch .css files
-
   // Watch .js files
   gulp.watch(appPath+'js/*.js', ['AppJS']);
 
