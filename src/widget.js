@@ -1,9 +1,11 @@
 (function(){
-    
+    //set the server where the files are hosted
+    var basePath = (window.location.port !== '3005')?'http://muthuvijay.com/weather/widget/':'';
+
     //load CSS
     var styles = document.createElement('link');
     styles.setAttribute('rel', 'stylesheet');
-    styles.setAttribute('href', 'styles/widget.css');
+    styles.setAttribute('href', basePath+'styles/widget.css');
     document.getElementById('js-weather-widget').appendChild(styles);
 
     if (window.require === undefined) {
@@ -29,10 +31,10 @@
     function main(){
         require.config({
             paths: {
-                api : "js/weather-api",
-                app : "js/weather-app",
-                http: "js/weather-http",
-                dom: "js/weather-dom"
+                api : basePath + "js/weather-api",
+                app : basePath + "js/weather-app",
+                http: basePath + "js/weather-http",
+                dom: basePath + "js/weather-dom"
             }
         });
 

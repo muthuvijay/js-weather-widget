@@ -16,7 +16,7 @@ http://muthuvijay.com/weather/widget/
 ## Embed Widget Code
  ```html
  <div id="js-weather-widget"></div>
- <script src="widget.min.js"></script>
+ <script src="http://muthuvijay.com/weather/widget/widget.min.js"></script>
  ```
 
 
